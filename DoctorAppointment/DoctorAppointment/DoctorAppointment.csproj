@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>DoctorAppointment.Identity</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AspNetCore.Identity.MongoDbCore" Version="3.1.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Views" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\User\Create.cshtml" />
+      <AdditionalFiles Include="Views\User\CreateRole.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DoctorAppointment.Core\DoctorAppointment.Core.csproj" />
+    </ItemGroup>
+
+</Project>
