@@ -22,12 +22,10 @@ public class RegisterAppointment
         
         Console.WriteLine("Escolha seu plano de saúde");
         
-        int count = 0;
-        foreach (string name in Enum.GetNames(typeof(TypeHealthPlan)))
+        foreach (TypeHealthPlan plan in Enum.GetValues(typeof(TypeHealthPlan)))
         {
-            Console.WriteLine($"Digite {count} para selecionar o plano : {name}");
-            count++;
- //Após selecionar o plano de saúde, fazemos a lógica para dizer quais especialidades temos direito e qual o horário disponivel
+            Console.WriteLine($"Digite {(int)plan} para selecionar o plano: {plan}");
+            // Após selecionar o plano de saúde, faça a lógica para determinar especialidades e horários disponíveis.
         }
 
         int OptionPlanHealth = int.Parse(Console.ReadLine());
@@ -39,19 +37,60 @@ public class RegisterAppointment
     {
         if (OptionPlanHealth == (int)TypeHealthPlan.Bradesco)
         {
-            Console.WriteLine("Bradesco");
+            appointment.TypeHealthPlan = TypeHealthPlan.Bradesco;
+            Console.WriteLine("Plano Bradesco selecionado.");
         }
         else if (OptionPlanHealth == (int)TypeHealthPlan.Planserv)
         {
-            Console.WriteLine("Planserv");
+            appointment.TypeHealthPlan = TypeHealthPlan.Planserv;
+            Console.WriteLine("Plano Planserv selecionado.");
         }
         else if (OptionPlanHealth == (int)TypeHealthPlan.Unimed)
         {
-            Console.WriteLine("Unimed");
+            appointment.TypeHealthPlan = TypeHealthPlan.Unimed;
+            Console.WriteLine("Plano Unimed selecionado.");
         }
         else if (OptionPlanHealth == (int)TypeHealthPlan.MultiVida)
         {
-            Console.WriteLine("MultiVida");
+            Console.WriteLine(" Plano MultiVida Selecionado");
+        }
+    }
+    public static void AvaliableMedicalSpeciality(Appointment appointment)
+    {
+       Console.Clear();
+
+       if (appointment.TypeHealthPlan.Equals(TypeHealthPlan.Bradesco))
+       {
+           filterSpecialtyMedic(appointment);
+       }
+       
+       else if (appointment.TypeHealthPlan.Equals(TypeHealthPlan.Planserv))
+       {
+           filterSpecialtyMedic(appointment);
+       }
+       
+       else if (appointment.TypeHealthPlan.Equals(TypeHealthPlan.MultiVida))
+       {
+           filterSpecialtyMedic(appointment);
+       }
+    }
+
+    private static void filterSpecialtyMedic(Appointment appointment)
+    {
+        foreach (MedicalSpecialty Specialty in Enum.GetValues(typeof(MedicalSpecialty)))
+        {
+            Console.WriteLine($"Digite {(int)Specialty} para selecionar a especialidade médica disponível: {Specialty}");
+        }
+        
+        int option = Int32.Parse(Console.ReadLine());
+
+        MedicalSpecialty specialty = (MedicalSpecialty)option;
+        
+        Console.WriteLine($"Especialidade médica{specialty} escolhida!");
+        
+        if (option == 1)
+        {
+            appointment.MedicalSpecialty = MedicalSpecialty.Cardiology;
         }
     }
 
