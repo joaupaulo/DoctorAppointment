@@ -20,6 +20,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\DoctorAppointment.Core\DoctorAppointment.Core.csproj" />
+      <ProjectReference Include="..\DoctorAppointment.Domain\DoctorAppointment.Domain.csproj" />
     </ItemGroup>
 
 </Project>

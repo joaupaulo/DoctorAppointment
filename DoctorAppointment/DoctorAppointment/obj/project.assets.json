@@ -446,11 +446,28 @@
       "DoctorAppointment.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DoctorAppointment.Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/DoctorAppointment.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/DoctorAppointment.Core.dll": {}
+        }
+      },
+      "DoctorAppointment.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AspNetCore.Identity.MongoDbCore": "3.1.2",
+          "MongoDbGenericRepository": "1.4.8"
+        },
+        "compile": {
+          "bin/placeholder/DoctorAppointment.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DoctorAppointment.Domain.dll": {}
         }
       }
     }
@@ -993,12 +1010,18 @@
       "type": "project",
       "path": "../DoctorAppointment.Core/DoctorAppointment.Core.csproj",
       "msbuildProject": "../DoctorAppointment.Core/DoctorAppointment.Core.csproj"
+    },
+    "DoctorAppointment.Domain/1.0.0": {
+      "type": "project",
+      "path": "../DoctorAppointment.Domain/DoctorAppointment.Domain.csproj",
+      "msbuildProject": "../DoctorAppointment.Domain/DoctorAppointment.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "AspNetCore.Identity.MongoDbCore >= 3.1.2",
-      "DoctorAppointment.Core >= 1.0.0"
+      "DoctorAppointment.Core >= 1.0.0",
+      "DoctorAppointment.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1031,6 +1054,9 @@
           "projectReferences": {
             "C:\\Users\\JoãoPaulodosSantosSa\\RiderProjects\\DoctorAppointment\\DoctorAppointment.Core\\DoctorAppointment.Core.csproj": {
               "projectPath": "C:\\Users\\JoãoPaulodosSantosSa\\RiderProjects\\DoctorAppointment\\DoctorAppointment.Core\\DoctorAppointment.Core.csproj"
+            },
+            "C:\\Users\\JoãoPaulodosSantosSa\\RiderProjects\\DoctorAppointment\\DoctorAppointment.Domain\\DoctorAppointment.Domain.csproj": {
+              "projectPath": "C:\\Users\\JoãoPaulodosSantosSa\\RiderProjects\\DoctorAppointment\\DoctorAppointment.Domain\\DoctorAppointment.Domain.csproj"
             }
           }
         }

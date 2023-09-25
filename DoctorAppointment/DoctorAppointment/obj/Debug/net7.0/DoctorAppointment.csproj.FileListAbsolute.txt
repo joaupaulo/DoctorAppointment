@@ -69,7 +69,9 @@ C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\bin\Debug\net7.0\runtimes\osx\native\libmongocrypt.dylib
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\bin\Debug\net7.0\runtimes\win\native\mongocrypt.dll
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\bin\Debug\net7.0\DoctorAppointment.Core.dll
+C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\bin\Debug\net7.0\DoctorAppointment.Domain.dll
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\bin\Debug\net7.0\DoctorAppointment.Core.pdb
+C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\bin\Debug\net7.0\DoctorAppointment.Domain.pdb
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\obj\Debug\net7.0\DoctorAppointment.csproj.AssemblyReference.cache
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\obj\Debug\net7.0\DoctorAppointment.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\obj\Debug\net7.0\DoctorAppointment.AssemblyInfoInputs.cache

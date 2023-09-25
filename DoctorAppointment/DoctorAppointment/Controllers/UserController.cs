@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using DoctorAppointment.Core;
 using DoctorAppointment.Core.Interface;
+using DoctorAppointment.Domain.Dtos;
+using DoctorAppointment.Domain.Model;
 using DoctorAppointment.Identity.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -51,9 +53,13 @@ namespace DoctorAppointment.Identity
                 {
                     if (applicationUser.typeUser == TypeUser.Paciente)
                     {
-                        _pacientService.ProcessPacient();
-                        PacientService pacient = new();
-                        pacient.ProcessPacient(); 
+                        PacientDto pacientData = new();
+                        pacientData.Name = applicationUser.UserName;
+                        pacientData.Email = applicationUser.Email;
+                        pacientData.Registerpacient = applicationUser.Id;
+                        
+                        _pacientService.ProcessPacient(pacientData);
+                        
                     }
                     else
                     {

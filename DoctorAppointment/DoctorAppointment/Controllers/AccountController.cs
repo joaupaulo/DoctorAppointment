@@ -44,9 +44,8 @@ public class AccountController : Controller
                 {
                     if (appUser.typeUser == TypeUser.Paciente)
                     {
-                        _pacientService.ProcessPacient();
-                        PacientService pacient = new();
-                        pacient.ProcessPacient(); 
+                        
+                        
                     }
                     else
                     {

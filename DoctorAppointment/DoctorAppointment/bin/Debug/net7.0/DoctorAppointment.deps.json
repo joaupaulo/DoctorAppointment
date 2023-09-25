@@ -9,7 +9,8 @@
       "DoctorAppointment/1.0.0": {
         "dependencies": {
           "AspNetCore.Identity.MongoDbCore": "3.1.2",
-          "DoctorAppointment.Core": "1.0.0"
+          "DoctorAppointment.Core": "1.0.0",
+          "DoctorAppointment.Domain": "1.0.0"
         },
         "runtime": {
           "DoctorAppointment.dll": {}
@@ -212,8 +213,20 @@
         }
       },
       "DoctorAppointment.Core/1.0.0": {
+        "dependencies": {
+          "DoctorAppointment.Domain": "1.0.0"
+        },
         "runtime": {
           "DoctorAppointment.Core.dll": {}
+        }
+      },
+      "DoctorAppointment.Domain/1.0.0": {
+        "dependencies": {
+          "AspNetCore.Identity.MongoDbCore": "3.1.2",
+          "MongoDbGenericRepository": "1.4.8"
+        },
+        "runtime": {
+          "DoctorAppointment.Domain.dll": {}
         }
       }
     }
@@ -407,6 +420,11 @@
       "hashPath": "system.text.encoding.codepages.4.5.1.nupkg.sha512"
     },
     "DoctorAppointment.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DoctorAppointment.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

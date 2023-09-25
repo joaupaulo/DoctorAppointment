@@ -1,6 +1,9 @@
-﻿namespace DoctorAppointment.Core.Interface;
+﻿using DoctorAppointment.Domain.Dtos;
+using DoctorAppointment.Identity.Model;
+
+namespace DoctorAppointment.Core.Interface;
 
 public interface IPacientService
 {
-    public void ProcessPacient();
+    public void ProcessPacient(PacientDto pacientDto);
 }

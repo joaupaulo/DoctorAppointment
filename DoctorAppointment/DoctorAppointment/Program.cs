@@ -1,6 +1,7 @@
 using System;
 using DoctorAppointment.Core;
 using DoctorAppointment.Core.Interface;
+using DoctorAppointment.Domain.Model;
 using DoctorAppointment.Identity;
 using DoctorAppointment.Identity.Model;
 using Microsoft.AspNetCore.Builder;
