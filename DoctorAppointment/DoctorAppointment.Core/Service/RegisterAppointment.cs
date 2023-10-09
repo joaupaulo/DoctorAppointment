@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using DoctorAppointment.Core.Interface;
 using DoctorAppointment.Domain.Dtos;
 using DoctorAppointment.Domain.Model;
 
 namespace DoctorAppointment.Core;
 
-public class RegisterAppointment
+public class RegisterAppointment : IRegisterAppointment
 {
 
     public Appointment RegisterAppo(PacientDto pacientDto)
@@ -14,7 +16,18 @@ public class RegisterAppointment
         SelectHealthPlan(appointment, pacientDto);
         return appointment;
     }
-    
+
+    public static void SelectTypePayment(Appointment appointment)
+    {
+        foreach (TypePayment planPayment in Enum.GetValues(typeof(TypePayment)))
+        {
+            Console.WriteLine($"Digite {(int)planPayment} para selecionar o plano: {planPayment}");
+        }
+       
+        int option = Int32.Parse(Console.ReadLine());
+
+        appointment.TypePayment = (TypePayment)option;
+    }
     public static void SelectHealthPlan(Appointment appointment,PacientDto pacientDto)
     {
         Console.WriteLine($"Olá{appointment.NameOfPacient}, preciso que me diga o seu plano de saúde " +
@@ -29,7 +42,7 @@ public class RegisterAppointment
         }
 
         int OptionPlanHealth = int.Parse(Console.ReadLine());
-
+        appointment.MedicalSpecialty = (TypeHealthPlan)OptionPlanHealth;
         FilterOptionPlanHealth(OptionPlanHealth, appointment);
     }
 
@@ -37,22 +50,20 @@ public class RegisterAppointment
     {
         if (OptionPlanHealth == (int)TypeHealthPlan.Bradesco)
         {
-            appointment.TypeHealthPlan = TypeHealthPlan.Bradesco;
-            Console.WriteLine("Plano Bradesco selecionado.");
+            Console.WriteLine("OK");
         }
         else if (OptionPlanHealth == (int)TypeHealthPlan.Planserv)
         {
-            appointment.TypeHealthPlan = TypeHealthPlan.Planserv;
-            Console.WriteLine("Plano Planserv selecionado.");
+            Console.WriteLine("OK");
         }
         else if (OptionPlanHealth == (int)TypeHealthPlan.Unimed)
         {
-            appointment.TypeHealthPlan = TypeHealthPlan.Unimed;
-            Console.WriteLine("Plano Unimed selecionado.");
+            
+            Console.WriteLine("oK");
         }
         else if (OptionPlanHealth == (int)TypeHealthPlan.MultiVida)
         {
-            Console.WriteLine(" Plano MultiVida Selecionado");
+            Console.WriteLine("OK");
         }
     }
     public static void AvaliableMedicalSpeciality(Appointment appointment)
@@ -92,6 +103,21 @@ public class RegisterAppointment
         {
             appointment.MedicalSpecialty = MedicalSpecialty.Cardiology;
         }
+        
+        if (option == 2)
+        {
+            appointment.MedicalSpecialty = MedicalSpecialty.Dermatology;
+        }
+        
+        if (option == 3)
+        {
+            appointment.MedicalSpecialty = MedicalSpecialty.Orthopedics;
+        }
+        
+        if (option == 4)
+        {
+            appointment.MedicalSpecialty = MedicalSpecialty.Neurology;
+        }
     }
 
     public static void RegisterNamePacientAppointment(Appointment appointment, PacientDto pacientDto)
@@ -99,5 +125,35 @@ public class RegisterAppointment
         Console.WriteLine($"Olá{pacientDto.Name},vamos preencher sua ficha!");
         appointment.NameOfPacient = pacientDto.Name;
     }
-    
+
+    public static void DateTimeAvaliable(Appointment appointment)
+    {
+        List<DateTime> datesAndTimes = new List<DateTime>
+        {
+            new DateTime(2023, 9, 25, 10, 0, 0),  
+            new DateTime(2023, 9, 26, 14, 30, 0), 
+            new DateTime(2023, 9, 27, 16, 15, 0), 
+            new DateTime(2023, 9, 28, 11, 45, 0), 
+            new DateTime(2023, 9, 29, 19, 0, 0)   
+        };
+        
+        Console.WriteLine("Escolha um dos horários abaixo:");
+
+        for (int i = 0; i < datesAndTimes.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {datesAndTimes[i].ToString("dd/MM/yyyy HH:mm")}");
+        }
+        
+        Console.Write("Digite o número correspondente ao horário desejado: ");
+        if (int.TryParse(Console.ReadLine(), out int choice) && choice >= 1 && choice <= datesAndTimes.Count)
+        {
+            DateTime selectedDateTime = datesAndTimes[choice - 1];
+            Console.WriteLine($"Você escolheu o horário: {selectedDateTime.ToString("dd/MM/yyyy HH:mm")}");
+            appointment.DateAppointment = selectedDateTime;
+        }
+        else
+        {
+            Console.WriteLine("Opção inválida.");
+        }
+    }
 }

@@ -96,3 +96,6 @@ C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\obj\Debug\net7.0\DoctorAppointment.pdb
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\obj\Debug\net7.0\DoctorAppointment.genruntimeconfig.cache
 C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\obj\Debug\net7.0\ref\DoctorAppointment.dll
+C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\bin\Debug\net7.0\DoctorAppointment.Core.deps.json
+C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\bin\Debug\net7.0\DoctorAppointment.Core.runtimeconfig.json
+C:\Users\JoãoPaulodosSantosSa\RiderProjects\DoctorAppointment\DoctorAppointment\bin\Debug\net7.0\DoctorAppointment.Core.exe

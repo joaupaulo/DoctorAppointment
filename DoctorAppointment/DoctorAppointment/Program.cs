@@ -16,11 +16,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IDoctorService, DoctorService>();
 builder.Services.AddSingleton<IPacientService, PacientService>();
+builder.Services.AddSingleton<IRegisterAppointment, RegisterAppointment>();
 var mongoDbConfig = builder.Configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
     .AddMongoDbStores<ApplicationUser, ApplicationRole, Guid>
         ( mongoDbConfig.ConnectionString, mongoDbConfig.CollectionName);
-
+builder.Services.A
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
